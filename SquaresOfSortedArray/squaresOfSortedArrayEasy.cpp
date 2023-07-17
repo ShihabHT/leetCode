@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 class Solution {
@@ -7,16 +8,11 @@ public:
     vector<int> sortedSquares(vector<int>& nums) {
         vector<int> final = {};
         int right = nums.size()-1, left = 0;
-        while(left != right) {
-            if(nums[left]*nums[left]>nums[right]*nums[right]){
-                final.insert(final.begin(), nums[left]*nums[left]);
-                left += 1;
-            }else{
-                final.insert(final.begin(), nums[right]*nums[right]);
-                right -=1;
-            }
+        int square1, square2;
+        for(int num : nums){
+            final.push_back(num*num);
         }
-        final.insert(final.begin(), nums[left]*nums[left]);
+        sort(final.begin(), final.end());
         return final;
     }
 };
