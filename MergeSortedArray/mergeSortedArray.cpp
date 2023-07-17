@@ -64,8 +64,8 @@ int main(){
     // }
     // cout << *nums1.begin() << " "<< *(nums1.end()-1)<<endl;
 
-    Solution *sol = new Solution();
-    sol->merge(nums1, m, nums2, n);
+    Solution sol;
+    sol.merge(nums1, m, nums2, n);
     for(int num: nums1){
         cout << num << endl;
     }
