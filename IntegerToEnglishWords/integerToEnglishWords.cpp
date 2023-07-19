@@ -42,7 +42,9 @@ public:
         int threeDigit, count = 0;
         while(num>0){
             threeDigit = num % 1000;
-            result = hunds(threeDigit) + millBill[count] + result;
+            if(threeDigit != 0){
+                result = hunds(threeDigit) + millBill[count] + result;
+            }
             count++;
             num /= 1000;
         }
@@ -52,7 +54,7 @@ public:
 };
 
 int main(){
-    int num = 2147483647;
+    int num = 1000000000;
 
     Solution sol;
     cout<<sol.numberToWords(num);
