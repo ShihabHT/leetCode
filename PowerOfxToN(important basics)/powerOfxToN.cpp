@@ -10,7 +10,7 @@ public:
 
         double pow = 1.0;
 
-        while(n)
+        while(n) //The loop will continue as long as the condition n evaluates to true (non-zero)
         {
             if(n%2 == 1 && n>0)
                 pow *= x;
