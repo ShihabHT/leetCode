@@ -29,4 +29,6 @@ int main(){
   in other words, it is the product of some integer with itself.
   For example, 1, 4, 9, and 16 are perfect squares while 3 and 11
   are not.
+
+  This problem utilizes coin change algorithm
 */
