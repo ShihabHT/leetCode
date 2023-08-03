@@ -31,16 +31,14 @@ int main(){
     return 0;
 }
 /*
-  989. Add to Array-Form of Integer
+  415. Add Strings
 
-The array-form of an integer num is an array representing its digits in left to right order.
+Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
 
-For example, for num = 1321, the array form is [1,3,2,1].
-Given num, the array-form of an integer, and an integer k, return the array-form of the integer num + k.
+You must solve the problem without using any built-in library for handling large integers (such as BigInteger). You must also not convert the inputs to integers directly.
 
 Example 1:
 
-Input: num = [1,2,0,0], k = 34
-Output: [1,2,3,4]
-Explanation: 1200 + 34 = 1234
+Input: num1 = "11", num2 = "123"
+Output: "134"
 */
