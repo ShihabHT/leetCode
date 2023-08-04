@@ -33,14 +33,20 @@ int main(){
     return 0;
 }
 /*
-  392. Is Subsequence
+  792. Number of Matching Subsequences
+Medium
 
-Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+Given a string s and an array of strings words, return the number of words[i] that is a
+subsequence of s.
+A subsequence of a string is a new string generated from the original string with some
+characters (can be none) deleted without changing the relative order of the remaining
+characters.
 
-A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
-
+For example, "ace" is a subsequence of "abcde".
+ 
 Example 1:
 
-Input: s = "abc", t = "ahbgdc"
-Output: true
+Input: s = "abcde", words = ["a","bb","acd","ace"]
+Output: 3
+Explanation: There are three strings in words that are a subsequence of s: "a", "acd", "ace".
 */
