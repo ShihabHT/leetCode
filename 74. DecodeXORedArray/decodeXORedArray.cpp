@@ -5,10 +5,6 @@ using namespace std;
 class Solution {
 public:
     vector<int> decode(vector<int>& encoded, int first) {
-        /*we tried to minimize auxiliary space usage, so instead of creating new vector we
-        inserted a neutral element(0) so the values are not affected before their job is
-        finished while performing operations*/
-        
         vector<int> arr(encoded.size()+1);
         arr[0] = first;
         for(int i = 0; i < encoded.size(); i++){
@@ -18,8 +14,22 @@ public:
     }
 };
 
+/*
+  this used less memory with expense of slight less performance
+class Solution {
+    public:
+    vector<int> decode(vector<int>& encoded, int first) {
+        encoded.insert(encoded.begin(), first);
+        for(int i = 0; i < encoded.size()-1; i++){
+            encoded[i+1] = encoded[i]^encoded[i+1];
+        }
+        return encoded;
+    }
+};
+*/
+
 int main(){
-    vector<int> encoded = {6};
+    vector<int> encoded = {6,2,7,3};
     vector<int> res;
     Solution sol;
     res = sol.decode(encoded, 4);
