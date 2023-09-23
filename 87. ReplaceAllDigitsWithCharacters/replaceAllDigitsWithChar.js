@@ -1,27 +1,35 @@
-#include <iostream>
-using namespace std;
+/**
+ * @param {string} s
+ * @param {number[]} shifts
+ * @return {string}
+ */
 
-class Solution {
-public:
-    string replaceDigits(string s) {
-        for(int i=1; i<s.length(); i+=2){
-            s[i] = s[i-1]+(s[i]-'0'); //s[i]-'0' gives the integer itself, and when we replace a character in string it automatically converts to char and then replaces
-            cout<<s[i]<<endl;
-        }
-        return s;
+var replaceDigits = function(s) {
+    let result = "";
+    let len = s.length;
+    for(let i = 1; i < len; i+=2){
+        result += s[i-1] + String.fromCharCode(s.charCodeAt(i-1) + parseInt(s[i]));
     }
+    if(len & 1) result += s[len - 1];
+    return result;
+};
+var shiftingLetters = function(s, shifts) {
+    let total = 0;
+    for(let i = 0; i < shifts.length; i++) {
+        total += shifts[i];
+    }
+    let result = "";
+    result += String.fromCharCode(97+(((s.charCodeAt(0)+total)-97)%26));
+    for(let i = 1; i < s.length; i++) {
+        total -= shifts[i-1];
+        result += String.fromCharCode(97+(((s.charCodeAt(i)+total)-97)%26));
+    }
+    return result;
 };
 
-int main(){
-    string s = "a1b2c1";
-    cout<<s<<endl;
-
-    Solution sol;
-    cout<< sol.replaceDigits(s);
-
-    return 0;
-}
-
+var s = "a1b2c1e";
+console.log(replaceDigits(s));
+console.log(s.charCodeAt(0) + parseInt(s[1]));
 /*
 1844. Replace All Digits with Characters
 Easy
