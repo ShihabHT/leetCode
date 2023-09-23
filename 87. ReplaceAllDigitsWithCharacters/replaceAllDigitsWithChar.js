@@ -13,19 +13,6 @@ var replaceDigits = function(s) {
     if(len & 1) result += s[len - 1];
     return result;
 };
-var shiftingLetters = function(s, shifts) {
-    let total = 0;
-    for(let i = 0; i < shifts.length; i++) {
-        total += shifts[i];
-    }
-    let result = "";
-    result += String.fromCharCode(97+(((s.charCodeAt(0)+total)-97)%26));
-    for(let i = 1; i < s.length; i++) {
-        total -= shifts[i-1];
-        result += String.fromCharCode(97+(((s.charCodeAt(i)+total)-97)%26));
-    }
-    return result;
-};
 
 var s = "a1b2c1e";
 console.log(replaceDigits(s));
